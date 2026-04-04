@@ -6,14 +6,19 @@ import { useAuth } from "@/context/AuthContext";
 import { useEffect } from "react";
 import {
   Shield, Users, ShoppingBag, FileText, BarChart3,
+  ShoppingCart, MessageSquare, Star, Video, Package,
   Settings, LogOut, Home, ChevronRight
 } from "lucide-react";
 
 const menuItems = [
-  { icon: BarChart3, label: "Tổng quan", href: "/admin/dashboard" },
-  { icon: Users, label: "Quản lý Người dùng", href: "/admin/users" },
-  { icon: ShoppingBag, label: "Quản lý Sản phẩm", href: "/admin/products" },
-  { icon: FileText, label: "Quản lý Bài viết", href: "/admin/articles" },
+  { icon: BarChart3,      label: "Tổng quan",       href: "/admin/dashboard", tab: 'overview' },
+  { icon: ShoppingCart,   label: "Đơn hàng",         href: "/admin/dashboard", tab: 'orders' },
+  { icon: ShoppingBag,    label: "Sản phẩm",         href: "/admin/products" },
+  { icon: FileText,       label: "Bài viết",         href: "/admin/articles" },
+  { icon: MessageSquare,  label: "Bình luận",        href: "/admin/dashboard", tab: 'comments' },
+  { icon: Star,           label: "Đánh giá SP",      href: "/admin/dashboard", tab: 'reviews' },
+  { icon: Video,          label: "Video",             href: "/admin/dashboard", tab: 'videos' },
+  { icon: Users,          label: "Người dùng",       href: "/admin/users" },
 ];
 
 export default function AdminLayout({ children }) {
@@ -59,11 +64,14 @@ export default function AdminLayout({ children }) {
         <nav className="flex-1 p-4 space-y-1">
           <p className="text-[10px] font-bold text-gray-600 uppercase tracking-widest px-3 mb-3">Menu chính</p>
           {menuItems.map((item) => {
-            const isActive = pathname === item.href;
+            const href = item.tab ? `${item.href}?tab=${item.tab}` : item.href;
+            const isActive = item.tab
+              ? pathname === item.href && typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('tab') === item.tab
+              : pathname === item.href;
             return (
               <Link
-                key={item.href}
-                href={item.href}
+                key={href}
+                href={href}
                 className={`flex items-center gap-3 px-4 py-3 rounded-xl text-[13px] font-medium transition-all duration-200 ${
                   isActive
                     ? "bg-blue-500/15 text-blue-400 font-bold"

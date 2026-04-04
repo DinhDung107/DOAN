@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Search, Bell, User, Bookmark, Settings, LogOut, LayoutDashboard, ShoppingBag, ShoppingCart, Shield } from 'lucide-react';
+import { Search, Bell, User, Bookmark, Settings, LogOut, LayoutDashboard, ShoppingBag, ShoppingCart, Shield, Package } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { useToast } from '@/context/ToastContext';
@@ -164,6 +164,13 @@ export default function Header() {
                       onClick={() => setShowUserMenu(false)}
                     >
                       <User size={16} className="text-[#8A9BB0]" /> Trang cá nhân
+                    </Link>
+                    <Link 
+                      href="/dashboard/orders" 
+                      className="flex items-center gap-3 px-5 py-2.5 hover:bg-[#F0F2F5] text-[13px] font-semibold text-[#444] transition-colors"
+                      onClick={() => setShowUserMenu(false)}
+                    >
+                      <Package size={16} className="text-[#8A9BB0]" /> Lịch sử đặt hàng
                     </Link>
                     <Link 
                       href="/dashboard/saved" 

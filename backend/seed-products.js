@@ -12,7 +12,7 @@ const products = [
     discountPrice: 26990000,
     category: 'mobile',
     brand: 'Apple',
-    images: ['https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&q=80&w=600'],
+    images: ['/images/products/iphone-15-pro-max.jpg'],
     specs: [
       { key: 'Màn hình', value: '6.7 inch Super Retina XDR' },
       { key: 'Chip', value: 'A17 Pro' },
@@ -32,7 +32,7 @@ const products = [
     discountPrice: 26490000,
     category: 'mobile',
     brand: 'Samsung',
-    images: ['https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&q=80&w=600'],
+    images: ['https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600'],
     specs: [
       { key: 'Màn hình', value: '6.8 inch Dynamic AMOLED 2X' },
       { key: 'Chip', value: 'Snapdragon 8 Gen 3' },
@@ -52,7 +52,7 @@ const products = [
     discountPrice: 17990000,
     category: 'mobile',
     brand: 'Xiaomi',
-    images: ['https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&q=80&w=600'],
+    images: ['https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600'],
     specs: [
       { key: 'Màn hình', value: '6.73 inch LTPO AMOLED' },
       { key: 'Chip', value: 'Snapdragon 8 Gen 3' },
@@ -72,7 +72,7 @@ const products = [
     discountPrice: 19990000,
     category: 'mobile',
     brand: 'OPPO',
-    images: ['https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=600'],
+    images: ['https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600'],
     specs: [
       { key: 'Màn hình', value: '6.82 inch LTPO AMOLED' },
       { key: 'Chip', value: 'Dimensity 9300' },
@@ -94,7 +94,7 @@ const products = [
     discountPrice: 46990000,
     category: 'laptop',
     brand: 'Apple',
-    images: ['https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=600'],
+    images: ['/images/products/macbook-pro-14-m3-pro.jpg'],
     specs: [
       { key: 'Màn hình', value: '14.2 inch Liquid Retina XDR' },
       { key: 'Chip', value: 'Apple M3 Pro' },
@@ -114,7 +114,7 @@ const products = [
     discountPrice: 35990000,
     category: 'laptop',
     brand: 'ASUS',
-    images: ['https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&q=80&w=600'],
+    images: ['https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600'],
     specs: [
       { key: 'Màn hình', value: '14 inch 2.8K OLED 120Hz' },
       { key: 'CPU', value: 'AMD Ryzen 9 8945HS' },
@@ -134,7 +134,7 @@ const products = [
     discountPrice: 34990000,
     category: 'laptop',
     brand: 'Dell',
-    images: ['https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&q=80&w=600'],
+    images: ['https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600'],
     specs: [
       { key: 'Màn hình', value: '15.6 inch 3.5K OLED' },
       { key: 'CPU', value: 'Intel Core i7-14700H' },
@@ -154,7 +154,7 @@ const products = [
     discountPrice: 31990000,
     category: 'laptop',
     brand: 'Lenovo',
-    images: ['https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80&w=600'],
+    images: ['https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600'],
     specs: [
       { key: 'Màn hình', value: '14 inch 2.8K OLED' },
       { key: 'CPU', value: 'Intel Core i7-1365U' },
@@ -176,7 +176,7 @@ const products = [
     discountPrice: 5490000,
     category: 'accessory',
     brand: 'Apple',
-    images: ['https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?auto=format&fit=crop&q=80&w=600'],
+    images: ['/images/products/airpods-pro-2-usbc.jpg'],
     specs: [
       { key: 'Chống ồn', value: 'ANC chủ động' },
       { key: 'Chip', value: 'Apple H2' },
@@ -195,7 +195,7 @@ const products = [
     discountPrice: 6490000,
     category: 'accessory',
     brand: 'Sony',
-    images: ['https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=600'],
+    images: ['https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600'],
     specs: [
       { key: 'Chống ồn', value: 'ANC cao cấp, 8 microphone' },
       { key: 'Pin', value: '30 giờ' },
@@ -214,7 +214,7 @@ const products = [
     discountPrice: 4290000,
     category: 'accessory',
     brand: 'Samsung',
-    images: ['https://images.unsplash.com/photo-1590658268037-6bf12f032f55?auto=format&fit=crop&q=80&w=600'],
+    images: ['https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600'],
     specs: [
       { key: 'Chống ồn', value: 'ANC thông minh AI' },
       { key: 'Pin', value: '7 giờ (30 giờ với hộp sạc)' },
@@ -235,7 +235,7 @@ const products = [
     discountPrice: 11490000,
     category: 'ai',
     brand: 'Meta',
-    images: ['https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&q=80&w=600'],
+    images: ['https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600'],
     specs: [
       { key: 'Chip', value: 'Snapdragon XR2 Gen 2' },
       { key: 'Bộ nhớ', value: '128GB' },
@@ -254,7 +254,7 @@ const products = [
     discountPrice: 42990000,
     category: 'ai',
     brand: 'DJI',
-    images: ['https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&q=80&w=600'],
+    images: ['https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600'],
     specs: [
       { key: 'Camera', value: 'Hasselblad + Tele 3x + Tele 7x' },
       { key: 'Video', value: '5.1K/50fps' },
@@ -275,7 +275,7 @@ const products = [
     discountPrice: 12490000,
     category: 'gaming',
     brand: 'Sony',
-    images: ['https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&q=80&w=600'],
+    images: ['https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600'],
     specs: [
       { key: 'CPU/GPU', value: 'AMD Zen 2 / RDNA 2' },
       { key: 'SSD', value: '1TB NVMe' },
@@ -294,7 +294,7 @@ const products = [
     discountPrice: 4990000,
     category: 'gaming',
     brand: 'Razer',
-    images: ['https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&q=80&w=600'],
+    images: ['https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600'],
     specs: [
       { key: 'Switch', value: 'Razer Green Mechanical' },
       { key: 'Đèn', value: 'RGB Chroma' },
@@ -313,7 +313,7 @@ const products = [
     discountPrice: 2990000,
     category: 'gaming',
     brand: 'Logitech',
-    images: ['https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&q=80&w=600'],
+    images: ['https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600'],
     specs: [
       { key: 'Cảm biến', value: 'HERO 2 (32K DPI)' },
       { key: 'Trọng lượng', value: '60g' },
@@ -332,7 +332,7 @@ const products = [
     discountPrice: 7490000,
     category: 'gaming',
     brand: 'Nintendo',
-    images: ['https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?auto=format&fit=crop&q=80&w=600'],
+    images: ['https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600'],
     specs: [
       { key: 'Màn hình', value: '7 inch OLED' },
       { key: 'Bộ nhớ', value: '64GB' },

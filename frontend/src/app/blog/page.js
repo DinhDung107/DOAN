@@ -1,8 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import BlogCard from '@/components/blog/BlogCard';
 import { articleService } from '@/services/articleService';
 import { Search, Filter, Newspaper } from 'lucide-react';
@@ -10,6 +8,8 @@ import { Search, Filter, Newspaper } from 'lucide-react';
 export default function BlogPage() {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('Tất cả');
 
   useEffect(() => {
     async function loadArticles() {
@@ -25,10 +25,26 @@ export default function BlogPage() {
     loadArticles();
   }, []);
 
+  const filteredArticles = articles.filter(article => {
+    // Search filter
+    const lowerQuery = searchQuery.toLowerCase();
+    const matchesSearch = !searchQuery || (
+      article.title?.toLowerCase().includes(lowerQuery) ||
+      article.excerpt?.toLowerCase().includes(lowerQuery)
+    );
+
+    // Category filter
+    const matchesCategory = selectedCategory === 'Tất cả' || (
+      article.tags?.some(tag => tag.toLowerCase() === selectedCategory.toLowerCase()) ||
+      article.content?.toLowerCase().includes(selectedCategory.toLowerCase()) ||
+      article.title?.toLowerCase().includes(selectedCategory.toLowerCase())
+    );
+
+    return matchesSearch && matchesCategory;
+  });
+
   return (
     <div className="min-h-screen bg-[#F8F9FA]">
-      <Header />
-      
       <main className="container-custom py-12">
         {/* Hero Section */}
         <div className="bg-white rounded-[32px] p-12 mb-12 border border-[#E8EAED] relative overflow-hidden shadow-sm">
@@ -48,6 +64,8 @@ export default function BlogPage() {
               <input 
                 type="text" 
                 placeholder="Tìm nội dung bạn quan tâm..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="bg-transparent w-full focus:outline-none text-[15px] font-medium"
               />
             </div>
@@ -68,8 +86,9 @@ export default function BlogPage() {
                 {['Tất cả', 'Công nghệ', 'Thiết kế', 'Blockchain', 'AI Art', 'Xu hướng'].map((cat) => (
                   <button 
                     key={cat}
+                    onClick={() => setSelectedCategory(cat)}
                     className={`w-full text-left px-4 py-2.5 rounded-xl text-[13px] font-bold transition-all ${
-                      cat === 'Tất cả' ? 'bg-primary text-white shadow-md shadow-blue-500/20' : 'hover:bg-[#F0F2F5] text-[#555]'
+                      cat === selectedCategory ? 'bg-primary text-white shadow-md shadow-blue-500/20' : 'hover:bg-[#F0F2F5] text-[#555]'
                     }`}
                   >
                     {cat}
@@ -87,9 +106,9 @@ export default function BlogPage() {
                   <div key={i} className="bg-white rounded-2xl h-[400px] animate-pulse border border-[#E8EAED]"></div>
                 ))}
               </div>
-            ) : articles.length > 0 ? (
+            ) : filteredArticles.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {articles.map(article => (
+                {filteredArticles.map(article => (
                   <BlogCard key={article._id} article={article} />
                 ))}
               </div>
@@ -106,7 +125,6 @@ export default function BlogPage() {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 }

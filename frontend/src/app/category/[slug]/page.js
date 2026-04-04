@@ -10,11 +10,11 @@ const CATEGORY_INFO = {
     title: "Điện thoại",
     desc: "Khám phá thế giới smartphone với những đánh giá chi tiết và so sánh khách quan nhất.",
     color: "from-[#0056D2] to-[#003d99]",
-    heroImg: "https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&q=80&w=800",
+    heroImg: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=800",
     articles: [
-      { title: "iPhone 15 Pro Max sau 6 tháng: Vẫn là 'vị vua'?", tag: "Review", img: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&q=80&w=600", time: "15 phút đọc" },
-      { title: "Android 15: Những tính năng bảo mật mới cần biết", tag: "Hệ điều hành", img: "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?auto=format&fit=crop&q=80&w=600", time: "8 phút đọc" },
-      { title: "So sánh camera: Galaxy S24 Ultra vs Xiaomi 14 Ultra", tag: "Camera Test", img: "https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&q=80&w=600", time: "12 phút đọc" },
+      { title: "iPhone 15 Pro Max sau 6 tháng: Vẫn là 'vị vua'?", tag: "Review", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=600", time: "15 phút đọc" },
+      { title: "Android 15: Những tính năng bảo mật mới cần biết", tag: "Hệ điều hành", img: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&q=80&w=600", time: "8 phút đọc" },
+      { title: "So sánh camera: Galaxy S24 Ultra vs Xiaomi 14 Ultra", tag: "Camera Test", img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=600", time: "12 phút đọc" },
     ]
   },
   laptop: {
@@ -24,8 +24,8 @@ const CATEGORY_INFO = {
     heroImg: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80&w=800",
     articles: [
       { title: "MacBook Pro M3 Pro: Hiệu năng đáng kinh ngạc cho creator", tag: "Review", img: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=600", time: "12 phút đọc" },
-      { title: "Top 5 laptop gaming tầm giá 30 triệu đáng mua nhất 2024", tag: "Tư vấn", img: "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&q=80&w=600", time: "10 phút đọc" },
-      { title: "Dell XPS vs ThinkPad X1: Laptop doanh nhân nào tốt hơn?", tag: "So sánh", img: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&q=80&w=600", time: "8 phút đọc" },
+      { title: "Top 5 laptop gaming tầm giá 30 triệu đáng mua nhất 2024", tag: "Tư vấn", img: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&q=80&w=600", time: "10 phút đọc" },
+      { title: "Dell XPS vs ThinkPad X1: Laptop doanh nhân nào tốt hơn?", tag: "So sánh", img: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80&w=600", time: "8 phút đọc" },
     ]
   },
   accessory: {
@@ -34,31 +34,31 @@ const CATEGORY_INFO = {
     color: "from-[#059669] to-[#047857]",
     heroImg: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800",
     articles: [
-      { title: "AirPods Pro 2 USB-C: Nâng cấp đáng giá hay chỉ đổi cổng?", tag: "Review", img: "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?auto=format&fit=crop&q=80&w=600", time: "10 phút đọc" },
+      { title: "AirPods Pro 2 USB-C: Nâng cấp đáng giá hay chỉ đổi cổng?", tag: "Review", img: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&q=80&w=600", time: "10 phút đọc" },
       { title: "Sony WH-1000XM5: Vua chống ồn có xứng danh?", tag: "Review", img: "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=600", time: "12 phút đọc" },
-      { title: "Hướng dẫn chọn tai nghe True Wireless phù hợp với bạn", tag: "Tư vấn", img: "https://images.unsplash.com/photo-1590658268037-6bf12f032f55?auto=format&fit=crop&q=80&w=600", time: "7 phút đọc" },
+      { title: "Hướng dẫn chọn tai nghe True Wireless phù hợp với bạn", tag: "Tư vấn", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=600", time: "7 phút đọc" },
     ]
   },
   ai: {
     title: "AI & Robot",
     desc: "Công nghệ trí tuệ nhân tạo, thực tế ảo, drone và những thiết bị thông minh thế hệ mới.",
     color: "from-[#DC2626] to-[#B91C1C]",
-    heroImg: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+    heroImg: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800",
     articles: [
-      { title: "Meta Quest 3: Thực tế hỗn hợp đã sẵn sàng cho mọi người?", tag: "Review", img: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&q=80&w=600", time: "15 phút đọc" },
-      { title: "DJI Mavic 3 Pro: Flycam 3 camera đầu tiên trên thế giới", tag: "Review", img: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&q=80&w=600", time: "10 phút đọc" },
-      { title: "ChatGPT vs Gemini vs Claude: AI nào đáng dùng nhất?", tag: "So sánh", img: "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&q=80&w=600", time: "8 phút đọc" },
+      { title: "Meta Quest 3: Thực tế hỗn hợp đã sẵn sàng cho mọi người?", tag: "Review", img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=600", time: "15 phút đọc" },
+      { title: "DJI Mavic 3 Pro: Flycam 3 camera đầu tiên trên thế giới", tag: "Review", img: "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&q=80&w=600", time: "10 phút đọc" },
+      { title: "ChatGPT vs Gemini vs Claude: AI nào đáng dùng nhất?", tag: "So sánh", img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=600", time: "8 phút đọc" },
     ]
   },
   gaming: {
     title: "Gaming Gear",
     desc: "Console, bàn phím, chuột gaming và mọi thiết bị cho game thủ chuyên nghiệp.",
     color: "from-[#EA580C] to-[#C2410C]",
-    heroImg: "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?auto=format&fit=crop&q=80&w=800",
+    heroImg: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800",
     articles: [
       { title: "PlayStation 5 Slim: Nhỏ hơn, mạnh hơn, đáng mua hơn?", tag: "Review", img: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&q=80&w=600", time: "10 phút đọc" },
-      { title: "Nintendo Switch OLED vs Steam Deck: Handheld nào cho bạn?", tag: "So sánh", img: "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?auto=format&fit=crop&q=80&w=600", time: "12 phút đọc" },
-      { title: "Top 10 gaming gear đáng mua nhất Black Friday 2024", tag: "Tư vấn", img: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&q=80&w=600", time: "6 phút đọc" },
+      { title: "Nintendo Switch OLED vs Steam Deck: Handheld nào cho bạn?", tag: "So sánh", img: "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?auto=format&fit=crop&q=80&w=600", time: "12 phút đọc" },
+      { title: "Top 10 gaming gear đáng mua nhất Black Friday 2024", tag: "Tư vấn", img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600", time: "6 phút đọc" },
     ]
   }
 };

@@ -1,6 +1,6 @@
 'use client';
 
-import { Trash2, ShoppingBag, ShieldCheck, Lock, ArrowRight, Minus, Plus, ChevronLeft } from 'lucide-react';
+import { Trash2, ShoppingBag, ShieldCheck, Lock, ArrowRight, Minus, Plus, ChevronLeft, Package } from 'lucide-react';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 
@@ -106,6 +106,9 @@ export default function CartPage() {
 
               <Link href="/" className="flex items-center gap-2 text-[#0056D2] font-bold text-[14px] hover:underline mt-4">
                 <ChevronLeft size={16} /> Tiếp tục mua sắm
+              </Link>
+              <Link href="/dashboard/orders" className="flex items-center gap-2 text-[#8A9BB0] font-bold text-[14px] hover:text-[#1D1D1F] hover:underline mt-3">
+                <Package size={16} /> Lịch sử đặt hàng
               </Link>
             </div>
 

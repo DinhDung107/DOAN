@@ -10,7 +10,7 @@ const videos = [
     slug: 'tren-tay-iphone-15-pro-max',
     description: 'Mở hộp và trải nghiệm nhanh iPhone 15 Pro Max với khung Titanium, chip A17 Pro, camera 48MP và cổng USB-C đầu tiên trên iPhone.',
     thumbnail: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&q=80&w=1200',
-    youtubeId: 'xqyUdNxWazA',
+    youtubeId: '_HX5hP2VY1Y', // User requested ID
     duration: '15:30',
     category: 'unboxing',
     views: 12500,
@@ -22,7 +22,7 @@ const videos = [
     slug: 'tren-tay-samsung-s24-ultra',
     description: 'Đánh giá nhanh Samsung Galaxy S24 Ultra với Galaxy AI, S Pen tích hợp và camera 200MP. Có xứng đáng là flagship Android 2024?',
     thumbnail: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&q=80&w=800',
-    youtubeId: 'hSBu9mIuH0c',
+    youtubeId: 'DfTcsNzooQo',
     duration: '12:45',
     category: 'unboxing',
     views: 9800,
@@ -33,7 +33,7 @@ const videos = [
     slug: 'sony-wh-1000xm5-1-nam',
     description: 'Sau 1 năm sử dụng thực tế, Sony WH-1000XM5 có còn giữ được phong độ? Đánh giá về chống ồn, chất âm và độ bền.',
     thumbnail: 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=800',
-    youtubeId: 'eBmhYMgvYi0',
+    youtubeId: '5SOdwaVvbWM',
     duration: '08:20',
     category: 'review',
     views: 12400,
@@ -44,7 +44,7 @@ const videos = [
     slug: 'build-pc-gaming-30-trieu-2024',
     description: 'Hướng dẫn build PC Gaming 30 triệu đồng với hiệu năng mạnh mẽ, thiết kế đẹp và RGB hoành tráng cho năm 2024.',
     thumbnail: 'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&q=80&w=800',
-    youtubeId: 'BL4DCEp7blY',
+    youtubeId: 'hEa4K09VUSg',
     duration: '18:15',
     category: 'tutorial',
     views: 8900,
@@ -55,7 +55,7 @@ const videos = [
     slug: 'ban-phim-co-custom-gia-re',
     description: 'Top bàn phím cơ custom dưới 2 triệu tốt nhất. So sánh chất lượng, switch, keycap và trải nghiệm gõ thực tế.',
     thumbnail: 'https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&q=80&w=800',
-    youtubeId: 'lSMVTqSTjyQ',
+    youtubeId: '2BJbNjrvXKo',
     duration: '05:40',
     category: 'review',
     views: 18100,
@@ -66,7 +66,7 @@ const videos = [
     slug: 'danh-gia-dji-pocket-3',
     description: 'DJI Pocket 3 với cảm biến 1-inch và màn hình xoay 2 inch liệu có phải là camera vlog lý tưởng nhất hiện nay?',
     thumbnail: 'https://images.unsplash.com/photo-1607513361958-3f5f6ce83c74?auto=format&fit=crop&q=80&w=800',
-    youtubeId: 'qSIG0eXFTnQ',
+    youtubeId: '8oCPUXHYij8',
     duration: '22:10',
     category: 'hands-on',
     views: 5200,
@@ -77,7 +77,7 @@ const videos = [
     slug: 'macbook-pro-m3-max-review',
     description: 'Đánh giá chi tiết MacBook Pro M3 Max: hiệu năng render video, compile code, và xử lý đồ họa nặng.',
     thumbnail: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=800',
-    youtubeId: 'UgjhSlgCbGo',
+    youtubeId: 'yBgM1PUYL7A',
     duration: '20:35',
     category: 'review',
     views: 15300,
@@ -88,7 +88,7 @@ const videos = [
     slug: 'top-5-phu-kien-duoi-500k',
     description: 'Giới thiệu 5 phụ kiện công nghệ giá rẻ nhưng chất lượng cao, đáng mua nhất trong năm 2024.',
     thumbnail: 'https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&q=80&w=800',
-    youtubeId: '3eVy1-eg7ac',
+    youtubeId: 'O6QlpsysC-I',
     duration: '10:22',
     category: 'hands-on',
     views: 7600,
@@ -100,7 +100,7 @@ const videos = [
     slug: 'kinh-nghiem-dung-ai',
     description: 'Mẹo sử dụng AI hiệu quả trong công việc hàng ngày.',
     thumbnail: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=400',
-    youtubeId: 'aircAruvnKk',
+    youtubeId: 're0XophBPXc',
     duration: '00:58',
     category: 'shorts',
     views: 22000,
@@ -111,7 +111,7 @@ const videos = [
     slug: 'kich-ban-video-ai',
     description: 'Hướng dẫn nhanh tạo kịch bản video bằng ChatGPT.',
     thumbnail: 'https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=400',
-    youtubeId: '2IK3DFHRFfw',
+    youtubeId: 'g5f4Fgm4qZw',
     duration: '00:45',
     category: 'shorts',
     views: 18500,
@@ -122,7 +122,7 @@ const videos = [
     slug: '5-yeu-to-video-dep',
     description: 'Những tips quan trọng nhất khi quay video.',
     thumbnail: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=400',
-    youtubeId: 'K4TOrB7at0Y',
+    youtubeId: 'OXBLMcXoJ84',
     duration: '00:52',
     category: 'shorts',
     views: 14200,
@@ -133,7 +133,7 @@ const videos = [
     slug: 'bi-kip-build-pc-gia-re',
     description: 'Mẹo build PC gaming tiết kiệm mà vẫn mạnh.',
     thumbnail: 'https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&q=80&w=400',
-    youtubeId: 'BL4DCEp7blY',
+    youtubeId: 'fUWiuUf1CJU',
     duration: '00:59',
     category: 'shorts',
     views: 11800,
@@ -152,7 +152,11 @@ async function seedVideos() {
     await Video.deleteMany({});
     console.log('🗑️  Đã xóa videos cũ');
 
-    const videosWithAuthor = videos.map(v => ({ ...v, author: admin._id }));
+    const videosWithAuthor = videos.map(v => ({ 
+      ...v, 
+      author: admin._id,
+      thumbnail: `https://img.youtube.com/vi/${v.youtubeId}/maxresdefault.jpg`
+    }));
     const result = await Video.insertMany(videosWithAuthor);
     console.log(`✅ Đã thêm ${result.length} videos!`);
     result.forEach(v => console.log(`   - [${v.category}] ${v.title}`));

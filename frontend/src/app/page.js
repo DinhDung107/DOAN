@@ -12,6 +12,7 @@ import {
 export default function Home() {
   const { showSuccess } = useToast();
   const [isLoadingMore, setIsLoadingMore] = useState(false);
+  const [activeTab, setActiveTab] = useState('Mới nhất');
 
   const handleNewsletter = (e) => {
     e.preventDefault();
@@ -97,18 +98,24 @@ export default function Home() {
           <div className="col-span-1 md:col-span-5 lg:col-span-7">
             {/* Tabs */}
             <div className="flex border-b border-[#E8EAED] mb-8 text-[11px] font-black uppercase tracking-widest text-[#8A9BB0]">
-              <button className="text-primary border-b-2 border-primary pb-3.5 px-2 mr-6">Mới nhất</button>
-              <button className="hover:text-primary transition-colors pb-3.5 px-2 mr-6">Thảo luận nhiều</button>
-              <button className="hover:text-primary transition-colors pb-3.5 px-2">Đánh giá 5 ★</button>
+              {['Mới nhất', 'Thảo luận nhiều', 'Đánh giá 5 ★'].map(tab => (
+                <button 
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`${activeTab === tab ? 'text-primary border-b-2 border-primary' : 'hover:text-primary transition-colors'} pb-3.5 px-2 mr-6`}
+                >
+                  {tab}
+                </button>
+              ))}
             </div>
 
-            <div className="space-y-12">
+            <div className="flex flex-col gap-12">
 
               {/* Article 1 — Horizontal card */}
-              <article className="flex flex-col xl:flex-row gap-7 group cursor-pointer">
+              <article className={`flex flex-col xl:flex-row gap-7 group cursor-pointer ${activeTab === 'Thảo luận nhiều' ? 'order-2' : activeTab === 'Đánh giá 5 ★' ? 'order-3' : 'order-1'} transition-all`}>
                 <div className="xl:w-[45%] aspect-[16/10] rounded-2xl overflow-hidden bg-gray-100 shadow-sm shrink-0">
                   <img
-                    src="https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&q=80&w=800"
+                    src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800"
                     alt="Workstation"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
@@ -130,7 +137,7 @@ export default function Home() {
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                     <div className="flex items-center gap-3">
                       <div className="w-7 h-7 rounded-full overflow-hidden bg-gray-200">
-                        <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=100" alt="Minh Triết" className="w-full h-full object-cover" />
+                        <img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&q=80&w=100" alt="Minh Triết" className="w-full h-full object-cover" />
                       </div>
                       <span className="text-xs font-bold text-[#1D1D1F]">Minh Triết</span>
                     </div>
@@ -143,16 +150,14 @@ export default function Home() {
               </article>
 
               {/* Article 2 — Curator's Choice large card */}
-              <article className="bg-white rounded-[36px] overflow-hidden border border-[#E8EAED] cursor-pointer group shadow-sm hover:shadow-2xl hover-lift transition-all duration-500">
+              <article className={`bg-white rounded-[36px] overflow-hidden border border-[#E8EAED] cursor-pointer group shadow-sm hover:shadow-2xl hover-lift transition-all duration-500 ${activeTab === 'Thảo luận nhiều' ? 'order-3' : activeTab === 'Đánh giá 5 ★' ? 'order-1' : 'order-2'}`}>
                 {/* Image area */}
-                <div className="aspect-[2.4/1] bg-[#deecea] flex items-center justify-center overflow-hidden relative">
-                  <div className="w-52 h-52 bg-[#b2cdc7] rounded-full absolute -top-12 -left-12 opacity-20" />
-                  <div className="relative w-36 h-36 opacity-35">
-                    <svg viewBox="0 0 100 100" fill="#7ba39c">
-                      <path d="M50 10 L90 45 V90 H10 V45 L50 10" />
-                      <circle cx="50" cy="55" r="10" fill="white" />
-                    </svg>
-                  </div>
+                <div className="aspect-[2.4/1] bg-gray-100 flex items-center justify-center overflow-hidden relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&q=80&w=1200"
+                    alt="Smart Home"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
                 <div className="p-9">
                   <div className="flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.18em] mb-5">
@@ -171,7 +176,7 @@ export default function Home() {
                   <div className="flex items-center justify-between pt-5 border-t border-gray-100">
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-[16px] bg-[#ef8d6e] overflow-hidden shadow-sm shrink-0">
-                        <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&q=80&w=150" alt="Hoàng Nam" className="w-full h-full object-cover" />
+                        <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&q=80&w=150" alt="Hoàng Nam" className="w-full h-full object-cover" />
                       </div>
                       <div>
                         <h4 className="text-[15px] font-black text-[#1D1D1F] leading-tight">Hoàng Nam</h4>
@@ -187,12 +192,13 @@ export default function Home() {
               </article>
 
               {/* Article 3 — Small horizontal */}
-              <article className="flex gap-7 group cursor-pointer">
-                <div className="w-1/3 aspect-[4/3] rounded-2xl overflow-hidden bg-[#e0eeea] border border-[#E8EAED] flex items-center justify-center relative shadow-sm shrink-0">
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent" />
-                  <div className="w-14 h-14 bg-white/80 rounded-full flex items-center justify-center shadow-lg">
-                    <Shield size={22} className="text-[#7ba39c]" />
-                  </div>
+              <article className={`flex gap-7 group cursor-pointer ${activeTab === 'Thảo luận nhiều' ? 'order-1' : activeTab === 'Đánh giá 5 ★' ? 'order-2' : 'order-3'} transition-all`}>
+                <div className="w-1/3 aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 border border-[#E8EAED] flex items-center justify-center relative shadow-sm shrink-0">
+                  <img
+                    src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800"
+                    alt="Cyber Security AI"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
                 <div className="flex flex-col justify-center">
                   <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.18em] mb-3">
@@ -276,8 +282,8 @@ export default function Home() {
               </div>
               <div className="space-y-5 mb-8">
                 {[
-                  { name: 'Thanh Tùng', followers: '2.4k followers', img: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=100', verified: true },
-                  { name: 'Bích Ngọc', followers: '1.8k followers', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100', verified: true },
+                  { name: 'Thanh Tùng', followers: '2.4k followers', img: 'https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&q=80&w=100', verified: true },
+                  { name: 'Bích Ngọc', followers: '1.8k followers', img: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=100', verified: true },
                   { name: 'Phan Quân', followers: '940 followers', init: 'PQ', verified: false },
                 ].map((curator) => (
                   <div key={curator.name} className="flex items-center gap-3 cursor-pointer group/c">
