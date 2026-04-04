@@ -12,6 +12,15 @@ router.get('/', auth, async (req, res) => {
   }
 });
 
+router.put('/read-all', auth, async (req, res) => {
+  try {
+    await Notification.updateMany({ user: req.user.id, isRead: false }, { isRead: true });
+    res.json({ message: 'All notifications marked as read' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 router.put('/:id/read', auth, async (req, res) => {
   try {
     const notification = await Notification.findByIdAndUpdate(req.params.id, { isRead: true }, { new: true });
