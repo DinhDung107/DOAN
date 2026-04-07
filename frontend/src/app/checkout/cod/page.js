@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { useCart } from '@/context/CartContext';
+import { API_URL, BASE_URL } from '@/config';
 
 export default function PaymentCODPage() {
   const router = useRouter();
@@ -28,7 +29,7 @@ export default function PaymentCODPage() {
   // Load địa chỉ từ DB
   useEffect(() => {
     if (!token) { setLoadingAddr(false); return; }
-    fetch('http://localhost:5000/api/addresses', {
+    fetch(`${API_URL}/addresses`, {
       headers: { 'x-auth-token': token }
     })
       .then(r => r.json())
@@ -52,7 +53,7 @@ export default function PaymentCODPage() {
     }
     setSaving(true);
     try {
-      const res = await fetch('http://localhost:5000/api/addresses', {
+      const res = await fetch(`${API_URL}/addresses`, {
         method: 'POST',
         headers: { 'x-auth-token': token, 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form, isDefault: addresses.length === 0 })
@@ -75,7 +76,7 @@ export default function PaymentCODPage() {
     if (!token) { router.push('/login'); return; }
     setPlacing(true);
     try {
-      const res = await fetch('http://localhost:5000/api/orders', {
+      const res = await fetch(`${API_URL}/orders`, {
         method: 'POST',
         headers: { 'x-auth-token': token, 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -256,7 +257,7 @@ export default function PaymentCODPage() {
                 if (!product || typeof product === 'string') return null;
                 const imgSrc = product.images?.[0]?.startsWith('http')
                   ? product.images[0]
-                  : `http://localhost:5000${product.images?.[0] || ''}`;
+                  : `${BASE_URL}${product.images?.[0] || ''}`;
                 return (
                   <div key={product._id} className="flex items-center gap-8">
                     <div className="w-20 h-20 bg-[#F8F9FA] rounded-[20px] overflow-hidden p-3 border border-[#E8EAED] shrink-0">

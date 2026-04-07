@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { Mail, ThumbsUp, MessageSquare, Send, Star, Eye, ChevronRight } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import { useToast } from "@/context/ToastContext";
+import API_URL from "@/config";
 
 export default function ReviewDetailPage() {
   const { user } = useAuth();
@@ -23,9 +24,9 @@ export default function ReviewDetailPage() {
     async function fetchData() {
       try {
         const [articlesRes, reviewsRes, productsRes] = await Promise.all([
-          fetch("http://localhost:5000/api/articles"),
-          fetch("http://localhost:5000/api/reviews"),
-          fetch("http://localhost:5000/api/products"),
+          fetch(`${API_URL}/articles`),
+          fetch(`${API_URL}/reviews`),
+          fetch(`${API_URL}/products`),
         ]);
         
         if (articlesRes.ok) {
@@ -53,7 +54,7 @@ export default function ReviewDetailPage() {
     setSubmitting(true);
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch("http://localhost:5000/api/reviews", {
+      const res = await fetch(`${API_URL}/reviews`, {
         method: "POST",
         headers: { "Content-Type": "application/json", "x-auth-token": token },
         body: JSON.stringify({

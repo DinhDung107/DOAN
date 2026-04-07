@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { Share2, Plus, ArrowLeftRight, X, Search, ShoppingBag, Star, Check } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { useToast } from "@/context/ToastContext";
+import { API_URL, BASE_URL } from "@/config";
 
 export default function ComparisonPage() {
   const [allProducts, setAllProducts] = useState([]);
@@ -18,7 +19,7 @@ export default function ComparisonPage() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const res = await fetch("http://localhost:5000/api/products");
+        const res = await fetch(`${API_URL}/products`);
         if (res.ok) {
           const data = await res.json();
           setAllProducts(data);
@@ -136,7 +137,7 @@ export default function ComparisonPage() {
                 ) : (
                   <div className="space-y-2">
                     {filteredProducts.map(product => {
-                      const imgSrc = product.images?.[0]?.startsWith('http') ? product.images[0] : `http://localhost:5000${product.images?.[0] || ''}`;
+                      const imgSrc = product.images?.[0]?.startsWith('http') ? product.images[0] : `${BASE_URL}${product.images?.[0] || ''}`;
                       return (
                         <button
                           key={product._id}
@@ -189,7 +190,7 @@ export default function ComparisonPage() {
                     </div>
                   </th>
                   {selected.map(product => {
-                    const imgSrc = product.images?.[0]?.startsWith('http') ? product.images[0] : `http://localhost:5000${product.images?.[0] || ''}`;
+                    const imgSrc = product.images?.[0]?.startsWith('http') ? product.images[0] : `${BASE_URL}${product.images?.[0] || ''}`;
                     return (
                       <th key={product._id} className="p-6 align-top min-w-[220px]">
                         <div className="flex items-start gap-3">

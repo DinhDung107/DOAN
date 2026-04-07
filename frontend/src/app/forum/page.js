@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { TrendingUp, LayoutGrid, Edit3, MessageSquare, Eye, Star, CheckCircle2, Award, Clock, Tag } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
+import { API_URL, BASE_URL } from "@/config";
 
 export default function ForumPage() {
   const { user } = useAuth();
@@ -13,7 +14,7 @@ export default function ForumPage() {
   useEffect(() => {
     async function fetchArticles() {
       try {
-        const res = await fetch("http://localhost:5000/api/articles");
+        const res = await fetch(`${API_URL}/articles`);
         if (res.ok) setArticles(await res.json());
       } catch (err) {
         console.error("Lỗi fetch articles:", err);
@@ -84,7 +85,7 @@ export default function ForumPage() {
           {!loading && featured.length >= 3 && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
               <Link href={`/forum/${featured[0].slug}`} className="relative rounded-[24px] overflow-hidden aspect-square md:aspect-auto md:row-span-2 group">
-                <img src={featured[0].thumbnail || 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=800'} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={featured[0].title} />
+                <img src={featured[0].thumbnail ? (featured[0].thumbnail.startsWith('http') ? featured[0].thumbnail : `${BASE_URL}${featured[0].thumbnail}`) : 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=800'} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={featured[0].title} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
                   <span className="bg-[#0056D2] text-white text-[9px] font-black uppercase tracking-widest px-2.5 py-1 rounded-md self-start mb-3">Hot Discussion</span>
                   <h3 className="text-white text-2xl font-black leading-tight drop-shadow-md">{featured[0].title}</h3>
@@ -93,7 +94,7 @@ export default function ForumPage() {
               </Link>
               {featured.slice(1, 3).map(a => (
                 <Link key={a._id} href={`/forum/${a.slug}`} className="relative rounded-[24px] overflow-hidden aspect-[21/9] group">
-                  <img src={a.thumbnail || 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=800'} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={a.title} />
+                  <img src={a.thumbnail ? (a.thumbnail.startsWith('http') ? a.thumbnail : `${BASE_URL}${a.thumbnail}`) : 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=800'} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={a.title} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-5">
                     <h3 className="text-white text-[15px] font-black leading-tight drop-shadow-md">{a.title}</h3>
                   </div>

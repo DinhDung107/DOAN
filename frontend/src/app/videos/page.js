@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import API_URL from "@/config";
 import { Play, PlayCircle, Eye, Activity, Clock, ChevronRight, Zap, X } from "lucide-react";
 
 export default function VideosPage() {
@@ -13,7 +14,7 @@ export default function VideosPage() {
   useEffect(() => {
     async function fetchVideos() {
       try {
-        const res = await fetch("http://localhost:5000/api/videos");
+        const res = await fetch(`${API_URL}/videos`);
         if (res.ok) {
           const data = await res.json();
           setVideos(data.filter(v => v.category !== "shorts"));

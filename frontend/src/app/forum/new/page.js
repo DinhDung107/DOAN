@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import API_URL from "@/config";
 import { useAuth } from "@/context/AuthContext";
 import { ArrowLeft, Send } from "lucide-react";
 import Link from "next/link";
@@ -31,7 +32,7 @@ export default function NewArticlePage() {
       .replace(/(^-|-$)/g, "");
 
     try {
-      const res = await fetch("http://localhost:5000/api/articles", {
+      const res = await fetch(`${API_URL}/articles`, {
         method: "POST",
         headers: { "Content-Type": "application/json", "x-auth-token": token },
         body: JSON.stringify({

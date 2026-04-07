@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import { ChevronRight, Eye, Clock, Tag, ArrowLeft, ThumbsUp, MessageSquare, Share2 } from "lucide-react";
+import { API_URL, BASE_URL } from "@/config";
 
 export default function ArticleDetailPage() {
   const params = useParams();
@@ -14,7 +15,7 @@ export default function ArticleDetailPage() {
   useEffect(() => {
     async function fetchArticle() {
       try {
-        const res = await fetch(`http://localhost:5000/api/articles/${slug}`);
+        const res = await fetch(`${API_URL}/articles/${slug}`);
         if (res.ok) setArticle(await res.json());
       } catch (err) {
         console.error("Lỗi:", err);
@@ -114,7 +115,7 @@ export default function ArticleDetailPage() {
         {/* Thumbnail */}
         {article.thumbnail && (
           <div className="rounded-2xl overflow-hidden mb-10 border border-[#E8EAED]">
-            <img src={article.thumbnail} alt={article.title} className="w-full h-auto object-cover max-h-[400px]" />
+            <img src={article.thumbnail?.startsWith('http') ? article.thumbnail : `${BASE_URL}${article.thumbnail}`} alt={article.title} className="w-full h-auto object-cover max-h-[400px]" />
           </div>
         )}
 
